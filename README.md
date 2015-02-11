@@ -4,6 +4,6 @@ Sandbox to play around and feel confortable using BlackBox: https://github.com/S
 
 Instructions:
 - clone this repo
-- vagrant up
+- ```vagrant up && vagrant ssh```
 - ```cd blackbox-demo```
 - ```./init.sh```
