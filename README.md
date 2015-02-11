@@ -7,3 +7,5 @@ Instructions:
 - ```vagrant up && vagrant ssh```
 - ```cd blackbox-demo```
 - ```./init.sh```
+
+gpg password: *demo*
