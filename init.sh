@@ -24,6 +24,4 @@ gpg --batch --gen-key ${config}
 
 echo yes | blackbox_initialize
 
-git commit -m'INITIALIZE BLACKBOX' keyrings .gitignore
-
 blackbox_addadmin $(gpg --export |  gpg --list-packets --textmode | sed '/keyid/!d; s/.*keyid \([0-9A-F]\{16\}\).*/\1/I' | uniq)
