@@ -1,0 +1,30 @@
+---
+
+- name: blackbox - demo
+  hosts: all
+  sudo: yes
+
+  tasks:
+    - name: Git | install
+      apt:
+        pkg: git
+        state: installed
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: BlackBox | install
+      git:
+        repo: https://github.com/StackExchange/blackbox.git
+        dest: /opt/blackbox
+        version: production
+        accept_hostkey: yes
+
+    - name: BlackBox | add to path
+      shell: echo '#!/bin/bash\nPATH="${PATH}:/opt/blackbox/bin"' > /etc/profile.d/blackbox.sh
+
+    - name: Demo | clone repository
+      sudo: no
+      git:
+        repo: git@github.com:jacoelho/blackbox-demo.git
+        dest: /home/vagrant/blackbox-demo
+        accept_hostkey: yes
