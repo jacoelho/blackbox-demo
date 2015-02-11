@@ -31,6 +31,6 @@
     - name: Demo | clone repository
       sudo: no
       git:
-        repo: git@github.com:jacoelho/blackbox-demo.git
+        repo: https://github.com/jacoelho/blackbox-demo.git
         dest: /home/vagrant/blackbox-demo
         accept_hostkey: yes
