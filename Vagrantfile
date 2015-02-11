@@ -5,7 +5,7 @@ Vagrant.configure(2) do |config|
   config.vm.box = "chef/debian-7.8"
 
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "512"
+    vb.memory = "128"
   end
 
   config.ssh.forward_agent = true
